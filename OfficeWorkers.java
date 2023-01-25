@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class OfficeWorkers implements Iterable<Object> {
-    private List<Object> office = new ArrayList<>();
+public class OfficeWorkers implements Iterator {
+    private List office = new ArrayList<>();
 
     public OfficeWorkers() {
         office = new ArrayList<Object>();
     }
 
 
-    public List<Object> getOffice() {
+    public List getOffice() {
         return office;
     }
 
@@ -18,10 +18,18 @@ public class OfficeWorkers implements Iterable<Object> {
         office.add(object);
     }
 
+
+    int index;
     @Override
-    public Iterator<Object> iterator() {
-        return office.iterator();
+    public boolean hasNext() {
+        return index < office.size();
     }
+
+    @Override
+    public Object next() {
+        return office.get(index++);
+    }
+
 
 }
 

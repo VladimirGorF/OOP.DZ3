@@ -1,4 +1,6 @@
-public class FinDirector {
+import java.util.Iterator;
+
+public class FinDirector{
     private String name;
     private int age;
     private Counter counter;
@@ -25,6 +27,7 @@ public class FinDirector {
     public String toString() {
         return "FinDirector [name=" + name + ", age=" + age + ", counter=" + counter + "]";
     }
+
 
    
 }
